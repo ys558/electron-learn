@@ -16,7 +16,13 @@ mkdir electron-learn && cd electron-learn
 touch index.html index.js
 code .
 ```
-具体代码见各个文件
+基础目录结构:  
+```jsx
+main.js // 定义主进程(main process)的js文件, 主进程只有一个, 控制软件窗口的操作等
+render.js //  定义渲染进程(render process)文件, 即前端的界面的js文件,可以有多个
+index.html  // 渲染的根页面
+```
+具体代码见各个文件里的注释  
 
 ## 调试工具:
 以下调试工具也可直接参考[官方文档调试工具](https://www.electronjs.org/docs/tutorial/debugging-main-process):
@@ -38,15 +44,23 @@ code .
   "start": "electron --inspect=8888 ."
   ```
   重新 `npm start`:
+  
   ![主进程调试:](./md-resources/main-process-devTools.png)
 
   2. Chrome浏览器地址栏里输入: `chrome://inspect/#devices` ,出现如下, 
+
   ![主进程调试1:](./md-resources/main-process-Chrome.png)
+  
   点击Configure, 出现如下, 输入`localhost:8888`, 点击Done, 这样就配置好了
+  
   ![主进程调试2:](./md-resources/main-process-Chrome2.png)
+  
   重启`npm start`, 此时会界面就会出现监视的主程序文件[main.js](./main.js), Electron只有一个主程序入口
+  
   ![主进程调试3:](./md-resources/main-process-Chrome3.png)
+  
   点击上面的inspect,就会出现调试窗口:
+  
   ![主程序调试4:](./md-resources/main-process-Chrome4.png)
 
   - vs code调试:
@@ -78,9 +92,11 @@ code .
     ![断点](md-resources/main-process-vscode2.png)
     
     工具栏也会显示你打断点:
-    ![断点](md-resources\main-process-vscode3.png)
+    
+    ![断点](md-resources/main-process-vscode3.png)
 
     点击左上角的Run就会出现如下图操作:
+    
     ![vscode调试3](md-resources/main-process-vscode4.png)
 
 
