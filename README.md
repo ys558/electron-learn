@@ -38,15 +38,23 @@ code .
   "start": "electron --inspect=8888 ."
   ```
   重新 `npm start`:
+  
   ![主进程调试:](./md-resources/main-process-devTools.png)
 
   2. Chrome浏览器地址栏里输入: `chrome://inspect/#devices` ,出现如下, 
+
   ![主进程调试1:](./md-resources/main-process-Chrome.png)
+  
   点击Configure, 出现如下, 输入`localhost:8888`, 点击Done, 这样就配置好了
+  
   ![主进程调试2:](./md-resources/main-process-Chrome2.png)
+  
   重启`npm start`, 此时会界面就会出现监视的主程序文件[main.js](./main.js), Electron只有一个主程序入口
+  
   ![主进程调试3:](./md-resources/main-process-Chrome3.png)
+  
   点击上面的inspect,就会出现调试窗口:
+  
   ![主程序调试4:](./md-resources/main-process-Chrome4.png)
 
   - vs code调试:
@@ -78,9 +86,11 @@ code .
     ![断点](md-resources/main-process-vscode2.png)
     
     工具栏也会显示你打断点:
+    
     ![断点](md-resources\main-process-vscode3.png)
 
     点击左上角的Run就会出现如下图操作:
+    
     ![vscode调试3](md-resources/main-process-vscode4.png)
 
 
