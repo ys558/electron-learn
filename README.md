@@ -87,7 +87,7 @@ code .
     
     工具栏也会显示你打断点:
     
-    ![断点](md-resources\main-process-vscode3.png)
+    ![断点](md-resources/main-process-vscode3.png)
 
     点击左上角的Run就会出现如下图操作:
     
