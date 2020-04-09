@@ -9,3 +9,15 @@ window.onload = function(){
     })
   }
 }
+
+
+// [进程 api] 
+const getProcessInfo = () => {
+  console.log('getCPUUsage()', process.getCPUUsage())
+  // percentCPUUsage: 0
+  // idleWakeupsPerSecond: 0
+  console.log('env', process.env)
+  // {ALLUSERSPROFILE: "C:\ProgramData", ANDROID_HOME: "c:\Users\yuyi\AppData\Local\Android\Sdk", APPDATA: "C:\Users\yuyi\AppData\Roaming", asl.log: "Destination=file", COLORTERM: "truecolor", …}
+  console.log('arch', process.arch)
+  // arch x64
+}

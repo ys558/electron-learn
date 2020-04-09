@@ -100,8 +100,8 @@ index.html  // 渲染的根页面
     ![vscode调试3](md-resources/main-process-vscode4.png)
 
 
-## 常用[事件](https://www.electronjs.org/docs/all#%E4%BA%8B%E4%BB%B6):
--  ready: 完成初始化时触发
+## 常用[主线程事件](https://www.electronjs.org/docs/all#%E4%BA%8B%E4%BB%B6):
+-  ready: 完成初始化时触发  
 window-all-closed: 所有窗口被关闭  
 before-quit: App开始关闭窗口之前触发  
 wiil-quit: 所有窗口已关闭且应用程序将退出时触发  
@@ -110,3 +110,9 @@ quit: 应用程序退出时触发
 - [webContents常用事件](https://www.electronjs.org/docs/all#%E7%B1%BB-webcontents):  
 did-finish-load: 导航完成时触发,即选项卡的旋转器将停止旋转,并指派onload事件后  
 dom-ready: 一个框架中的文本加载完成后触发该事件
+
+- 以上demo 见主程序注释\[常用主程序事件\]: [main.js](./main.js)
+
+## 常用[进程 api (process api)](https://www.electronjs.org/docs/api/process)  
+- 由于软件装在用户机, 用户电脑及平台的配置各异, 所以需通过process api拿到用户信息,以便对开发出来的软件做出分析
+- demo见[index.html](./index.html) 注释 \[进程 api\]
