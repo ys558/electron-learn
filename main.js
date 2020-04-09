@@ -5,6 +5,8 @@ function createWindow() {
   let window = new BrowserWindow({
     width: 800,
     height: 600,
+    // 让 node可在渲染进程中使用:
+    // allow node use in render process: 
     webPreferences: { nodeIntegration: true }
   })
 
