@@ -22,7 +22,7 @@ main.js // 定义主进程(main process)的js文件, 主进程只有一个, 控�
 render.js //  定义渲染进程(render process)文件, 即前端的界面的js文件,可以有多个
 index.html  // 渲染的根页面
 ```
-具体代码见各个文件里的注释  
+具体代码见各个文件及注释\[render process demo\], 下面的演示均用自行配置的Electron运行:
 
 ## 调试工具:
 以下调试工具也可直接参考[官方文档调试工具](https://www.electronjs.org/docs/tutorial/debugging-main-process):
@@ -116,3 +116,7 @@ dom-ready: 一个框架中的文本加载完成后触发该事件
 ## 常用[进程 api (process api)](https://www.electronjs.org/docs/api/process)  
 - 由于软件装在用户机, 用户电脑及平台的配置各异, 所以需通过process api拿到用户信息,以便对开发出来的软件做出分析
 - demo见[index.html](./index.html) 注释 \[进程 api\]
+
+## [File 对象](https://www.electronjs.org/docs/api/file-object)
+- 处理上传文件的操作
+- demo见注释\[File 对象\]

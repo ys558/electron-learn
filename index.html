@@ -4,21 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="./render.js"></script>
 </head>
 <body>
   <h1>hello world</h1>    
   We are using node <script>document.write(process.versions.node)</script>,
   Chrome <script>document.write(process.versions.chrome);</script>, and Electron <script>document.write(process.versions.electron)</script>.<br>
-
-  <!-- render process demo -->
+  <hr>
+  
+  <!-- [render process demo] -->
   <Button id="btn">小姐姐请进</Button>
   <div id="myBabe"></div>
-  <script src="render/index.js"></script>
+  <hr>
 
   <!-- [进程 api] -->
   <div>
     <h2>Process api</h2>
     <button onclick="getProcessInfo()">控制台查看process信息</button>
   </div>
+  <hr>
+
+  <!-- [file 对象] -->
+  <div class="drag-file" id="drag-test">
+    <h1>file 对象</h1>
+    <span>拖动文件到这</span>
+  </div>
+  <hr>
+
 </body>
 </html>
