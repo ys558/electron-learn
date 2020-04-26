@@ -1,6 +1,6 @@
 // render process demo 
 const fs = require('fs')
-window.onload = function() {
+onload = () => {
   // [render process demo]
   const btn = this.document.querySelector('#btn')
   const myBabe = this.document.querySelector('#myBabe')
@@ -27,6 +27,24 @@ window.onload = function() {
     e.preventDefault();
     e.stopPropagation();
   });
+
+
+  // [webview 标签]
+  const webview = document.querySelector('#webview')
+  const loading = document.querySelector('#loading')
+  webview.addEventListener('did-start-loading', ()=> loading.innerHTML = 'loading....')
+  webview.addEventListener('did-stop-loading', () => {
+    loading.innerHTML = 'OK'
+    // insertCss方法:
+    webview.insertCSS(`#su { background: purple !important; }`)
+    webview.executeJavaScript(`
+      setTimeout(()=>{
+        alert(document.getElementById('su').value)
+      },1000)
+    `)
+    // 打开webview里的控制台:
+    // webview.openDevTools()
+  })
 }
 
 // [进程 api] 

@@ -120,3 +120,9 @@ dom-ready: 一个框架中的文本加载完成后触发该事件
 ## [File 对象](https://www.electronjs.org/docs/api/file-object)
 - 处理上传文件的操作
 - demo见注释\[File 对象\]
+
+## [<webView>标签](https://www.electronjs.org/docs/api/webview-tag)
+- 内嵌网页tab标签, 实现步骤：v5.0版本之后, 主线程文件`main.js`的`new BrowserWindow`的`webPreferences`里配置: `webviewTag: true`
+- 其和<iframe>的区别, webview是单独开了一个进程,可以像主进程一样指定`nodeIntegration: true`，让网页可以直接写node代码的能力，即可直接操作文件, [使用方法](https://www.electronjs.org/docs/api/webview-tag#nodeintegration)
+- 能使用新的脚本覆盖，嵌入到webView的网页中，[用法](https://www.electronjs.org/docs/api/webview-tag#preload)，`<webview preload="./test.js"></webview>`
+- 其他常用api: [<webview>.insertCSS(css)](https://www.electronjs.org/docs/api/webview-tag#webviewinsertcsscss),[<webview>.executeJavaScript(code[, userGesture])](https://www.electronjs.org/docs/api/webview-tag#webviewexecutejavascriptcode-usergesture), [<webview>.isDevToolsOpened()](https://www.electronjs.org/docs/api/webview-tag#webviewisdevtoolsopened)

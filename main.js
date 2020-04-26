@@ -7,7 +7,12 @@ function createWindow() {
     height: 600,
     // 让 node可在渲染进程中使用:
     // allow node in render process: 
-    webPreferences: { nodeIntegration: true }
+    webPreferences: { 
+      nodeIntegration: true,
+      webviewTag: true,
+    },
+
+    
   })
 
   // [常用主程序事件] webCOntents类生命周期:

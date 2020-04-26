@@ -28,9 +28,16 @@
   <!-- [file 对象] -->
   <div class="drag-file" id="drag-test">
     <h1>file 对象</h1>
-    <span>拖动文件到这</span>
+    <span>拖动文件到这，控制台查看文件路径和文件内容</span>
   </div>
   <hr>
 
+  <!-- [webview 标签] -->
+  <div>
+    <h2>webview</h2>
+    <span id="loading"></span>
+    <!-- nodeintegration 加上该属性 -->
+    <webview src="https://www.baidu.com/" id="webview" preload='./webview-preload/webview-preload.js'></webview>
+  </div>
 </body>
 </html>
