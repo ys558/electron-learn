@@ -29,22 +29,22 @@ onload = () => {
   });
 
 
-  // [webview 标签]
-  const webview = document.querySelector('#webview')
-  const loading = document.querySelector('#loading')
-  webview.addEventListener('did-start-loading', ()=> loading.innerHTML = 'loading....')
-  webview.addEventListener('did-stop-loading', () => {
-    loading.innerHTML = 'OK'
-    // insertCss方法:
-    webview.insertCSS(`#su { background: purple !important; }`)
-    webview.executeJavaScript(`
-      setTimeout(()=>{
-        alert(document.getElementById('su').value)
-      },1000)
-    `)
-    // 打开webview里的控制台:
-    // webview.openDevTools()
-  })
+  // // [webview 标签]
+  // const webview = document.querySelector('#webview')
+  // const loading = document.querySelector('#loading')
+  // webview.addEventListener('did-start-loading', ()=> loading.innerHTML = 'loading....')
+  // webview.addEventListener('did-stop-loading', () => {
+  //   loading.innerHTML = 'OK'
+  //   // insertCss方法:
+  //   webview.insertCSS(`#su { background: purple !important; }`)
+  //   webview.executeJavaScript(`
+  //     setTimeout(()=>{
+  //       alert(document.getElementById('su').value)
+  //     },1000)
+  //   `)
+  //   // 打开webview里的控制台:
+  //   // webview.openDevTools()
+  // })
 }
 
 // [进程 api] 
@@ -58,5 +58,13 @@ const getProcessInfo = () => {
   // arch x64
 }
 
-
-
+// window.open
+const oepnWindow = () => {
+  // 子窗口像父窗口传递数据:
+  window.open('window_pop.html', 'windowPop')
+}
+// 子窗口像父窗口传递数据: 
+// 写在外面是防止事件被多次注册:
+window.addEventListener('message', msg => {
+  console.log(`接收到子窗口的信息: ${msg}`)
+})

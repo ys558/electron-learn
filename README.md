@@ -1,4 +1,4 @@
-# Electron 学习笔记
+# Electron 自学笔记
 ## 脚手架安装:
 两个脚手架安装项目,其README文件安装的步骤可细读:
 ### [electron-quick-start](https://github.com/electron/electron-quick-start)
@@ -121,8 +121,47 @@ dom-ready: 一个框架中的文本加载完成后触发该事件
 - 处理上传文件的操作
 - demo见注释\[File 对象\]
 
-## [<webView>标签](https://www.electronjs.org/docs/api/webview-tag)
+## [webView标签](https://www.electronjs.org/docs/api/webview-tag)
 - 内嵌网页tab标签, 实现步骤：v5.0版本之后, 主线程文件`main.js`的`new BrowserWindow`的`webPreferences`里配置: `webviewTag: true`
 - 其和`<iframe></iframe>`的区别, webview是单独开了一个进程,可以像主进程一样指定`nodeIntegration: true`，让网页可以直接写node代码的能力，即可直接操作文件, [使用方法](https://www.electronjs.org/docs/api/webview-tag#nodeintegration)
 - 能使用新的脚本覆盖，嵌入到webView的网页中，[用法](https://www.electronjs.org/docs/api/webview-tag#preload)，`<webview preload="./test.js"></webview>`
 - 其他常用api: [<webview>.insertCSS(css)](https://www.electronjs.org/docs/api/webview-tag#webviewinsertcsscss), [<webview>.executeJavaScript(code[, userGesture])](https://www.electronjs.org/docs/api/webview-tag#webviewexecutejavascriptcode-usergesture), [<webview>.isDevToolsOpened()](https://www.electronjs.org/docs/api/webview-tag#webviewisdevtoolsopened)
+
+## [window.open](https://www.electronjs.org/docs/api/window-open#windowopenurl-framename-features)
+- [window.opener.postMessage()](https://www.electronjs.org/docs/api/window-open#windowopenerpostmessagemessage-targetorigin)
+
+## Electron和React的结合:
+- ### [官方源码击这里](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
+### 按照官方源码的markdown指引,执行以下命令:用yarn代替npm, 好处是yarn有缓存, 安装过的依赖直接在缓存里查找, npm没
+```shell
+> git clone --depth 1 --single-branch https://github.com/electron-react-boilerplate/electron-react-boilerplate.git your-project-name
+> cd your-project-name
+# 自动安装依赖: 和npm i相同:
+> yarn
+```
+### 开发环境:
+```shell
+yarn dev
+```
+### 生产环境打包:
+```shell
+yarn package
+```
+### !! 注意, yarn的国内环境安装并不友好, 如下图:
+- `npm i yarn -g`时发生的错误
+![yarn安装错误](./md-resources/yarn-install-error.png)
+### 推荐解决办法:
+- 安装yrm设置yarn的镜像源
+```shell
+> npm i yrm -g
+```
+- 查看yarn的源:
+```shell
+> yrm ls
+```
+![yarn的源](./md-resources/yarn-install-yrm-version.png)
+
+- 选择yarn的源:
+```shell
+> yarn use taobao
+```

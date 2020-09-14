@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>pop up window</h1>
+  <button onclick="sendMsgToParent()">向父窗口传递信息</button>
+</body>
+<script>
+  // 子窗口像父窗口传递数据:
+  const sendMsgToParent = () => {
+    window.opener.postMessage('来自子窗口的信息', 'windowPop')
+  } 
+</script>
+</html>
